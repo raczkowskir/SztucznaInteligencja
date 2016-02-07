@@ -1,0 +1,71 @@
+
+public class zadanie1 {
+	public static zadanie1 ObiektZadanie;
+
+	private zadanie1() {
+	}
+
+	public static zadanie1 zwrocObiekt() {
+		if (ObiektZadanie == null) {
+			ObiektZadanie = new zadanie1();
+		}
+		return ObiektZadanie;
+
+	}
+
+	// tablica na wylosowane chromosomy
+	public int[] chromosomy = new int[6];
+
+	// tablica na wylosowane chromosomy - wartosci binarne
+	public String[] chrBinarnie = new String[6];
+
+	// tablica na wartosci chromosomow obliczone z funkcji
+	public int[] chrWartosci = new int[6];
+	// tablica przedzialow
+	public int[] chrPrzedzialy = new int[6];
+
+	// metoda losujaca chromosomy - sypie sie POPRAWIC!!!!!!!!!!!!!!!!!!!!!!
+	public void losuj(int max, int[] tablica) {
+		int[] losTab = tablica;
+		int wylosowany;
+		try{
+		for (int i = 0; i < 6; i++) {
+			
+			wylosowany = (int) (max * Math.random());
+			if (wylosowany != losTab[0] && wylosowany != losTab[1] && wylosowany != losTab[2]
+					&& wylosowany != losTab[3] && wylosowany != losTab[4] && wylosowany != losTab[5]) {
+				losTab[i] = wylosowany;
+				System.out.println(wylosowany);
+			}
+			else{
+				losuj(max, tablica);
+			}
+			}
+		}
+		catch(StackOverflowError a){
+			System.out.println("Wy³apano: StackOverflowError");
+			
+		}
+		}
+	
+
+	// obliczanie wartosci dziesietnej
+	public int obliczWartosc(int x) {
+		int wartoscDziesietna = 3 * x + 2;
+		return wartoscDziesietna;
+	}
+
+	// zamiana na wartosc binarna
+	public String zamienNaBinarny(int y) {
+		String wartoscBinarna = Integer.toBinaryString(y);
+		int dlugosc = wartoscBinarna.length();
+		for (int i = dlugosc; i < 5; i++) {
+			wartoscBinarna = 0 + wartoscBinarna;
+		}
+		return wartoscBinarna;
+	}
+
+	public static void main(String[] args) {
+
+	}
+}

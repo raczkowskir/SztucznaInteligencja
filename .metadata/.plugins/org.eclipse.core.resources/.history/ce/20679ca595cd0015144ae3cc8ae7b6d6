@@ -1,0 +1,47 @@
+
+public class Krzyzowka {
+
+	// tablica na wylosowane chromosomy - experyment
+	public int[] chrExperyment = new int[6];
+	// wspo³czynniki krzyzowania dla kazdej pary
+	public int wsp1, wsp2, wsp3 = 0;
+	// tablica na wylosowane chromosomy - experyment - po sprawdzeniu do jakich przedzialow naleza
+	public int[] chrExpWlasciwe = new int[6];
+
+	// metoda ustawiajaca wspo³czynniki krzyzowania dla kazdeja par
+	public void UstawWspolcz() {
+		zadanie1 obiektZadanie = zadanie1.zwrocObiekt();
+		wsp1 = obiektZadanie.losWspolcz();
+		wsp2 = obiektZadanie.losWspolcz();
+		wsp3 = obiektZadanie.losWspolcz();
+		System.out.println("\nWspó³czynniki krzy¿owania: para I: " + wsp1 + " para II: " + wsp2 + " para III: " + wsp3);
+	}
+	//metoda sprawdzajaca do jakich chromosomow (przedzia³ow) nale¿a wylosowane wartoœci
+/*	public void SprawdzChr(int[] chrExperyment, int[] chrExpWlasciwe,  ){
+	
+		zadanie1 obiektZadanie = zadanie1.zwrocObiekt();
+		for (int x : chrExperyment;){
+		//	obiektZadanie.chrWartosci;
+		}
+	}
+*/
+	public static void main(String[] args) {
+		
+		Ustawiacz ustawiacz1 = new Ustawiacz();
+		ustawiacz1.ustaw();
+		
+		Krzyzowka k1 = new Krzyzowka();
+		
+		zadanie1 obiektZadanie = zadanie1.zwrocObiekt();
+		
+		int maxPrzedzial = obiektZadanie.chrWartosci[5];
+		obiektZadanie.losuj(maxPrzedzial, k1.chrExperyment);
+
+		System.out.print("\nOto 6 wzlosowanych chromosomow dla P1: ");
+		for (int x : k1.chrExperyment)
+			System.out.print(" " + x);
+
+		k1.UstawWspolcz();
+	}
+
+}

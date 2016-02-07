@@ -1,0 +1,50 @@
+
+public class zadanie1 {
+
+	// tablica na wylosowane chromosomy
+	public int[] chromosomy = new int[6];
+
+	// tablica na wylosowane chromosomy - wartosci binarne
+	public String[] chrBinarnie = new String[6];
+	
+	// tablica na wartosci chromosomow obliczone z funkcji
+	public int[] chrWartosci = new int[6];
+	// tablica przedzialow
+		public int[] chrPrzedzialy = new int[6];
+	
+	
+	// metoda losujaca chromosomy
+	public void losuj() {
+		int wylosowany;
+		for (int i = 0; i < 6; i++) {
+
+			wylosowany = (int) (31 * Math.random());
+			if (wylosowany != chromosomy[0] && wylosowany != chromosomy[1] && wylosowany != chromosomy[2]
+					&& wylosowany != chromosomy[3] && wylosowany != chromosomy[4] && wylosowany != chromosomy[5]) {
+				chromosomy[i] = wylosowany;
+			}
+		}
+	}
+
+	// obliczanie wartosci dziesietnej
+	public int obliczWartosc(int x) {
+		int wartoscDziesietna = 3 * x + 2;
+		return wartoscDziesietna;
+	}
+
+	// zamiana na wartosc binarna
+	public String zamienNaBinarny(int y) {
+		String wartoscBinarna = Integer.toBinaryString(y);
+		int dlugosc = wartoscBinarna.length();
+		for (int i = dlugosc; i < 5; i++) {
+			wartoscBinarna = 0 + wartoscBinarna;
+		}
+		return wartoscBinarna;
+	}
+
+	public static void main(String[] args) {
+
+
+
+	}
+}

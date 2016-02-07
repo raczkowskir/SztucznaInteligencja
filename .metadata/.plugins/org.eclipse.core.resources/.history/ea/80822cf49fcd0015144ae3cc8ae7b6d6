@@ -1,0 +1,13 @@
+
+public class tes {
+	public static void main(String Args[]){
+		System.out.println("abc");
+	     String cde = "cde";
+	     System.out.println("abc" + cde);
+	     String c = "abc".substring(2,3);
+	     String d = cde.substring(3);
+	     System.out.println(d);
+	     System.out.println(c);
+	}
+
+}
