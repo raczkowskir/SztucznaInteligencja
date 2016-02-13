@@ -26,6 +26,11 @@ public class zadanie1 {
 	public int[] chrWartosci = new int[6];
 	// tablica przedzialow
 	public int[] chrPrzedzialy = new int[6];
+	
+	//metoda wyswietlajaca globalne prawdopodobienstwa mutacji i krzyzowania
+	public void wyswietlPrawdopod(){
+		System.out.println("\nPK=0,7,  Globalne Prawdopodobieñstwo krzy¿owania \nPm=0,3  Globalne prawdopodobieñstwo mutacji");
+	}
 
 	// metoda sprawdzajaca czy juz wylosowalismy dany numer - jezeli tak to
 	// stosujemy rekurencje
@@ -66,7 +71,12 @@ public class zadanie1 {
 		}
 		return wartoscBinarna;
 	}
-
+	// metoda losujaca prawdopodobienstwa
+	public double losujPrawd(double max){
+	     double prawdopodobienstwo =  max * Math.random();
+	     return prawdopodobienstwo;
+	    }
+	
 	// metoda losujaca Wspó³czynnik krzy¿owania
 	public int losWspolcz() {
 		int wspolczynnik = 0;

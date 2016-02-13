@@ -2,9 +2,12 @@
 public class Ustawiacz {
 	public zadanie1 obiektZadanie;
 
-	public void ustaw() {
+	public void ustaw(int [] PoprzedniePokolenie) {
 		// stworzenie nowego obiektu do wywolywania potrzebnych metod
 		zadanie1 obiektZadanie = zadanie1.zwrocObiekt();
+		//wyswietlenie prawdopodobienstwa krzyzowania i mutacji
+		obiektZadanie.wyswietlPrawdopod();
+		
 		// pierwsze losowanie chromosomow
 		obiektZadanie.losuj(32, obiektZadanie.chromosomy);
 		// petla pokazujaca wylosowane chromosomy
@@ -26,7 +29,8 @@ public class Ustawiacz {
 		// obliczenie wartosci chromosomow z funkcji
 		System.out.print("\nWartosci chromosomow z obliczone z funkcji f(x)=3x+2: ");
 		int k = 0;
-		for (int x : obiektZadanie.chromosomy) {
+//		for (int x : obiektZadanie.chromosomy) {
+		for (int x : PoprzedniePokolenie) {
 
 			obiektZadanie.chrWartosci[k] = obiektZadanie.obliczWartosc(x);
 			k++;
